@@ -9,7 +9,8 @@ COPY supervisord.conf /etc/supervisor/supervisord.conf
 ADD install_mariadb.sh /home/
 
 RUN ["chmod","+x","/home/install_mariadb.sh"] 
-RUN /home/install_mariadb.sh && rm /home/install_mariadb.sh 
+
+RUN /home/install_mariadb.sh && rm /home/install_mariadb.sh
 
 #RUN mkdir /var/lib/mysql
 

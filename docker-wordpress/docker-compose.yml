@@ -2,13 +2,13 @@ version: '2'
 
 services:
    db:
-     image: mariadb:first
+     image: gesmogast/mariadb:wordpress
      restart: always
 
    wordpress:
      depends_on:
        - db
-     image: wordpress:latest
+     image: gesmogast/wordpress
      ports:
        - "8000:80"
      restart: always
