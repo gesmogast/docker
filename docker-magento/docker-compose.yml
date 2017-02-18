@@ -14,3 +14,8 @@ services:
      restart: always
      environment:
        MAGENTO_DB_HOST: db:3306
+
+   redis:
+     image: redis
+     restart: always
+
