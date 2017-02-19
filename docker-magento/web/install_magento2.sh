@@ -15,7 +15,7 @@ echo "Installing Magento2"
 --base-url="http://"$1 \
 --admin-user=admin \
 --admin-password=ABCdefg123! \
---admin-email=admin@testmagento.org \
+--admin-email=admin@$1 \
 --admin-firstname=admin \
 --admin-lastname=user \
 --cleanup-database
