@@ -10,7 +10,7 @@ services:
        - db
      image: gesmogast/wordpress
      ports:
-       - "8000:80"
+       - "192.168.100.50:80:80"
      restart: always
      environment:
        WORDPRESS_DB_HOST: db:3306

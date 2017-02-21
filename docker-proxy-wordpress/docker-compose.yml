@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+   db:
+     image: gesmogast/mariadb:wordpress
+     restart: always
+
+   wordpress:
+     depends_on:
+       - db
+     image: gesmogast/wordpress
+     restart: always
+     ports:
+       - "80"
+     environment:
+       - WORDPRESS_DB_HOST=db:3306
+       - VIRTUAL_HOST=wordpress.org
+
+   nginx-proxy:
+     image: gesmogast/nginx-proxy:latest
+     container_name: nginx-proxy
+     ports:
+       - "80:80"
+     volumes:
+       - /var/run/docker.sock:/tmp/docker.sock:ro
