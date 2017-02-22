@@ -11,7 +11,7 @@ services:
      image: gesmogast/nginx:magento
      restart: always
      ports:
-       - "192.168.100.60:80:80"
+       - "80"
      environment:
        MAGENTO_DB_HOST: db:3306
 
