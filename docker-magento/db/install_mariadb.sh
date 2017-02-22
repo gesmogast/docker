@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script installs Magento2 on Ubuntu1404 system
+# This script installs Magento2 on the Ubuntu 14.04
 PASSWORD='septimo'
 echo "Adding mariadb repository"
 apt-get install software-properties-common -y
