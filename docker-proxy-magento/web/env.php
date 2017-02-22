@@ -19,7 +19,7 @@ return array (
     array (
       'default' => 
       array (
-        'host' => 'localhost',
+        'host' => 'db',
         'dbname' => 'magentodb',
         'username' => 'magento',
         'password' => 'septimo',
@@ -102,12 +102,5 @@ return array (
   'install' => 
   array (
     'date' => 'Tue, 07 Feb 2017 10:14:54 +0000',
-  ),
-  'http_cache_hosts' => 
-  array (
-    0 => 
-    array (
-      'host' => '10.12.1.190',
-    ),
   ),
 );
