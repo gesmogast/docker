@@ -2,19 +2,23 @@ version: '2'
 
 services:
    db:
-     image: gesmogast/mariadb:wordpress
+     image: gesmogast/mariadb:magento
      restart: always
 
-   wordpress:
+   magento:
      depends_on:
        - db
-     image: gesmogast/wordpress
+     image: gesmogast/nginx:magento
      restart: always
      ports:
        - "80"
      environment:
-       - WORDPRESS_DB_HOST=db:3306
-       - VIRTUAL_HOST=wordpress.org
+       - MAGENTO_DB_HOST=db:3306
+       - VIRTUAL_HOST=testmagento.org
+
+   redis:
+     image: redis
+     restart: always
 
    nginx-proxy:
      image: jwilder/nginx-proxy:latest
