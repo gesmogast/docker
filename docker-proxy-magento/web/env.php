@@ -19,7 +19,7 @@ return array (
     array (
       'default' => 
       array (
-        'host' => 'db',
+        'host' => 'localhost',
         'dbname' => 'magentodb',
         'username' => 'magento',
         'password' => 'septimo',
@@ -39,58 +39,50 @@ return array (
   ),
   'x-frame-options' => 'SAMEORIGIN',
   'MAGE_MODE' => 'default',
-'cache' =>
-array(
-   'frontend' =>
-   array(
-      'default' =>
-      array(
-         'backend' => 'Cm_Cache_Backend_Redis',
-         'backend_options' =>
-         array(
-            'server' => 'redis',
-            'port' => '6379'
-            ),
+  'cache' => 
+  array (
+    'frontend' => 
+    array (
+      'default' => 
+      array (
+        'backend' => 'Cm_Cache_Backend_Redis',
+        'backend_options' => 
+        array (
+          'server' => 'redis',
+          'port' => '6379',
+          'persistent' => '',
+          'database' => '0',
+          'force_standalone' => '0',
+          'connect_retries' => '1',
+          'read_timeout' => '10',
+          'automatic_cleaning_factor' => '0',
+          'compress_data' => '1',
+          'compress_tags' => '1',
+          'compress_threshold' => '20480',
+          'compression_lib' => 'gzip',
+        ),
+      ),
+      'page_cache' => 
+      array (
+        'backend' => 'Cm_Cache_Backend_Redis',
+        'backend_options' => 
+        array (
+          'server' => 'redis',
+          'port' => '6379',
+          'persistent' => '',
+          'database' => '1',
+          'force_standalone' => '0',
+          'connect_retries' => '1',
+          'read_timeout' => '10',
+          'automatic_cleaning_factor' => '0',
+          'compress_data' => '0',
+          'compress_tags' => '1',
+          'compress_threshold' => '20480',
+          'compression_lib' => 'gzip',
+        ),
+      ),
     ),
-    'page_cache' =>
-    array(
-      'backend' => 'Cm_Cache_Backend_Redis',
-      'backend_options' =>
-       array(
-         'server' => 'redis',
-         'port' => '6379',
-         'database' => '1',
-         'compress_data' => '0'
-       )
-    )
-  )
-),
-'cache' =>
-array(
-   'frontend' =>
-   array(
-      'default' =>
-      array(
-         'backend' => 'Cm_Cache_Backend_Redis',
-         'backend_options' =>
-         array(
-            'server' => 'redis',
-            'port' => '6379'
-            ),
-    ),
-    'page_cache' =>
-    array(
-      'backend' => 'Cm_Cache_Backend_Redis',
-      'backend_options' =>
-       array(
-         'server' => 'redis',
-         'port' => '6379',
-         'database' => '1',
-         'compress_data' => '0'
-       )
-    )
-  )
-),
+  ),
   'cache_types' => 
   array (
     'config' => 1,
@@ -109,6 +101,13 @@ array(
   ),
   'install' => 
   array (
-    'date' => 'Sat, 18 Feb 2017 13:54:14 +0000',
+    'date' => 'Tue, 07 Feb 2017 10:14:54 +0000',
+  ),
+  'http_cache_hosts' => 
+  array (
+    0 => 
+    array (
+      'host' => '10.12.1.190',
+    ),
   ),
 );
