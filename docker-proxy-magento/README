@@ -1,0 +1,2 @@
+Magento2 website with redis container as cache service.
+Just run docker-compose up -d and then follow instuctions in the 'web' directory.
