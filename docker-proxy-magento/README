@@ -1,2 +1,9 @@
 Magento2 website with redis container as cache service.
 Just run docker-compose up -d and then follow instuctions in the 'web' directory.
+
+If cache is not working, then you need to rerun this command from the 'web' directory:
+
+docker cp env.php dockerproxymagento_magento_1:/var/www/magento/app/etc/env.php
+
+where dockerproxymagento_magento_1 is the name of the container.
+
