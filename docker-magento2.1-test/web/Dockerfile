@@ -15,6 +15,6 @@ RUN /home/install_magento.sh && rm /home/install_magento.sh
 
 #RUN mkdir /var/lib/mysql
 
-EXPOSE 22 80
+EXPOSE 22 8080
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
