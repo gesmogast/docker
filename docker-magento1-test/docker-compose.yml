@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+   db:
+     image: gesmogast/mariadb:magento
+     restart: always
+
+   magento:
+     depends_on:
+       - db
+     image: gesmogast/nginx:magento
+     restart: always
+     ports:
+       - "80"
+     environment:
+       MAGENTO_DB_HOST: db:3306
+
+   redis:
+     image: redis
+     restart: always
+
