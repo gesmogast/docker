@@ -6,6 +6,10 @@ RUN apt-get update && apt-get install -y openssh-server supervisor iproute2 varn
 RUN mkdir -p /var/run/sshd /var/log/supervisor /run/php
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 
+# Copy varnish configuration inside the container
+COPY varnish.d/varnish /etc/default/varnish
+COPY varnish.d/default.vcl /etc/varnish/default.vcl
+
 ADD install_magento.sh /home/
 ADD magento.conf /home/
 
