@@ -8,11 +8,16 @@ services:
    db2:
      image: gesmogast/mariadb:wordpress
      restart: always
+   
+   db3:
+     image: gesmogast/mariadb:wordpress
+     restart: always
 
    wordpress:
      depends_on:
        - db1
        - db2
+       - db3
      image: gesmogast/wordpress
      ports:
        - "80:80"
