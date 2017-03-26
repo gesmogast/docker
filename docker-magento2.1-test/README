@@ -1,0 +1,26 @@
+To run dockerized magento instance just type:
+chmod +x run-test-magento-environment.sh && ./run-test-magento-environment.sh
+
+This command runs docker-compose, which runs docker containers:
+Web container:
+   nginx 1.10
+   php7.0-fpm
+   varnish4
+
+DB container:
+   percona 5.6
+
+Redis container:
+   redis
+
+MySQL credentials:
+hostname: db
+db name: magentodb
+db user: magento
+db password: septimo
+
+Website administration:
+Backend url: http://<sitename>/admin
+User: admin
+Password: ABCdefg123!
+
