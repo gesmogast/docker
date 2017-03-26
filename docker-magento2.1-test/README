@@ -1,5 +1,11 @@
 To run dockerized magento instance just type:
-chmod +x run-test-magento-environment.sh && ./run-test-magento-environment.sh
+chmod +x run-test-magento-environment.sh && ./run-test-magento-environment.sh sitename
+where sitename is your website name
+You can run script without parameter, so sitename will be generic: http://testmagento.org
+
+Don't forget to add ip-address and sitename to your hosts file 
+win - c:\windows\system32\drivers\etc\hosts
+lin\macos - \etc\hosts
 
 This command runs docker-compose, which runs docker containers:
 Web container:

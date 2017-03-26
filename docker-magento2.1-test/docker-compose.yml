@@ -4,6 +4,8 @@ services:
    db:
      image: gesmogast/percona:5.6
      restart: always
+     ports:
+       - "3306:3306"    
 
    magento:
      depends_on:
