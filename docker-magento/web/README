@@ -1,5 +1,0 @@
-To install magento2 with redis run the following command in the terminal while being in this directory:
-docker cp install_magento2.sh dockermagento_magento_1:/home/ && docker exec dockermagento_magento_1 chmod +x /home/install_magento2.sh && docker exec dockermagento_magento_1 /bin/sh /home/install_magento2.sh testmagento.org && docker cp env.php dockermagento_magento_1:/var/www/magento/app/etc/env.php
-
-This command copies installation script to the container and runs it. Configure site name as the last argument of the above command.
-

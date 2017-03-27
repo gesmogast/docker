@@ -1,0 +1,20 @@
+Don't forget to add ip-address and sitename to your hosts file 
+win - c:\windows\system32\drivers\etc\hosts
+lin\macos - \etc\hosts
+
+docker containers:
+Web container:
+   nginx 1.10
+   php5.6-fpm
+
+DB container:
+   percona 5.6
+
+MySQL credentials:
+hostname: db
+db name: magentodb
+db user: magento
+db password: septimo
+
+Website administration:
+Backend url: http://<sitename>/index.php/admin/
