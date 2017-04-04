@@ -1,4 +1,12 @@
 #!/bin/bash
+# Download and install magento2 
+mkdir -p /var/www
+cd /var/www/
+wget -q https://github.com/magento/magento2/archive/2.1.3.tar.gz
+tar -xzf /var/www/2.1.3.tar.gz
+rm -rf 2.1.3.tar.gz
+mv magento2-2.1.3/ magento
+cd /var/www/magento
 # Install magento2 inside prepared container with nginx and php7.0-fpm
 echo "Installing Magento2"
 /var/www/magento/bin/magento setup:install --backend-frontname="admin" \
