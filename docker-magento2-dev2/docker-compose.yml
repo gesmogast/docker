@@ -18,5 +18,5 @@ services:
      environment:
        MAGENTO_DB_HOST: db:3306
      volumes:
-       - ./website:/var/www
-       - ./nginxconf:/etc/nginx/sites-available
+       - ./project/website:/var/www
+       - ./project/nginxconf:/etc/nginx/sites-available
