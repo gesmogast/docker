@@ -17,6 +17,6 @@ services:
        - "443:443"
      environment:
        MAGENTO_DB_HOST: db:3306
- #    volumes:
- #      - /vagrant/project/website:/var/www
- #      - /vagrant/project/nginxconf:/etc/nginx/sites-available
+#    volumes:
+#      - /vagrant/project/website:/var/www
+#      - /vagrant/project/nginxconf:/etc/nginx/sites-available

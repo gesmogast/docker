@@ -2,15 +2,11 @@
 # Run docker-compose up
 docker-compose up -d
 # Do post-installation tasks (install magento2 and copy env.php to add redis configuration to magento instance)
+echo "Waiting 10 seconds to start containers fully"
 sleep 10s
 # Figure out container name
 containername=$(docker ps --filter "name=magento_1" | awk '{if(NR>1) print $NF}')
-# Figure out Nginx site configuration filename
-nginxfilename=`ls -A1 /vagrant/project/nginxconf/`
-# Create symlink to nginx conf
-docker exec $containername /bin/ln -s /etc/nginx/sites-available/$nginxfilename /etc/nginx/sites-enabled/
 # Do post-installation tasks (install magento2)
-echo "Installing magento2"
 # Site name = script's first argument, otherwise it is testmagento.org
 sitename=${1:-testmagento.org}
 # Going to conf directory, where magento installation script is located
