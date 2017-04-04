@@ -7,7 +7,7 @@ SPACE=" "
 HOSTS=$IP$SPACE$HOSTNAME
 echo $HOSTS >> /etc/hosts
 echo "Installing nginx and installation dependencies"
-apt-get install -y nginx software-properties-common
+apt-get install -y software-properties-common
 echo "Installing PHP7"
 echo "Adding php7 PPA"
 apt-get install -y language-pack-en-base
