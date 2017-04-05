@@ -19,18 +19,18 @@ else
     rm -rf 2.1.3.tar.gz
     mv magento2-2.1.3/ magento
 fi
-#cd ../..
-#DIR2="./project/nginxconf"
-#if [ "$(ls -A $DIR2)" ]; then
-#     echo "Nginx configuration is in project/nginxconf folder"
-#else
-#    echo "No website in project/nginxconf folder. Copying default template"
-#    cp ./web/magento.conf ./project/website/
-#fi
+# nginx config
+DIR2="./project/nginxconf"
+if [ "$(ls -A $DIR2)" ]; then
+     echo "Nginx configuration is in project/nginxconf folder"
+else
+    echo "No website in project/nginxconf folder. Copying default template"
+    docker cp web/magento.conf $containername:/etc/nginx/sites-available/
+fi
 # Site name = script's first argument, otherwise it is testmagento.org
 sitename=${1:-testmagento.org}
 # copy nginx config
-docker cp web/magento.conf $containername:/etc/nginx/sites-available/
+# docker cp web/magento.conf $containername:/etc/nginx/sites-available/
 # Going to conf directory, where magento installation script is located
 cd conf/
 # Copy installation script inside web docker container
