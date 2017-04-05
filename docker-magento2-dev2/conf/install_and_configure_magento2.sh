@@ -1,5 +1,7 @@
 #!/bin/bash
 # Install magento2 inside prepared container with nginx and php7.0-fpm
+cd /var/www/magento
+composer install -v
 echo "Installing Magento2"
 /var/www/magento/bin/magento setup:install --backend-frontname="admin" \
 --key="biY8vdWx4w8KV5Q59380Fejy36l6ssUb" \
