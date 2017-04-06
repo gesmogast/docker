@@ -26,4 +26,4 @@ Backend url: http://<sitename>/admin
 User: admin
 Password: admin123!
 
-1
+Control scripts (start, stop, restart, terminate) are in the control folder.
