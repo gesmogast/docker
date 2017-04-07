@@ -2,7 +2,7 @@ FROM rastasheep/ubuntu-sshd:16.04
 MAINTAINER armagast@gmail.com
 # Installation of magento2 with nginx
 
-RUN apt-get update && apt-get install -y nano openssh-server supervisor iproute2 nginx
+RUN apt-get update && apt-get install -y nano sudo git openssh-server supervisor iproute2 nginx
 RUN mkdir -p /var/run/sshd /var/log/supervisor /run/php
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 

@@ -15,7 +15,7 @@ services:
    magento:
      depends_on:
        - db
-     image: gesmogast/nginx:magento2v2
+     image: gesmogast/nginx:magento2v3
      restart: always
      ports:
        - "2222:22"
