@@ -1,16 +1,13 @@
 FROM rastasheep/ubuntu-sshd:16.04
 MAINTAINER armagast@gmail.com
-# Installation of magento 1.9 with nginx
+# nginx container
 
-RUN apt-get update && apt-get install -y openssh-server supervisor iproute2
+RUN apt-get update && apt-get install -y sudo nano git nginx openssh-server supervisor iproute2 software-properties-common
 RUN mkdir -p /var/run/sshd /var/log/supervisor /run/php
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 
 ADD install_magento.sh /home/
-ADD magento.conf /home/
-
-RUN ["chmod","+x","/home/install_magento.sh"] 
-
+RUN ["chmod","+x","/home/install_magento.sh"]
 RUN /home/install_magento.sh && rm /home/install_magento.sh
 
 EXPOSE 22 80
