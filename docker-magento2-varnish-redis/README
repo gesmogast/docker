@@ -1,7 +1,9 @@
 To run dockerized magento instance just type:
-chmod +x run-test-magento-environment.sh && ./run-test-magento-environment.sh sitename
+docker-compose up -d
+If you want to install magento2:
+chmod +x install-test-magento-environment.sh && ./install-test-magento-environment.sh sitename
 where sitename is your website name
-You can run script without parameter, so sitename will be generic: http://testmagento.org
+You can run script without parameter, so sitename will be default: http://testmagento.org
 
 Don't forget to add ip-address and sitename to your hosts file 
 win - c:\windows\system32\drivers\etc\hosts
@@ -13,17 +15,19 @@ Web container:
    php7.0-fpm
 
 DB container:
-   percona 5.6
+   mysql 5.6
 
 MySQL credentials:
 hostname: db
-db name: magentodb
-db user: magento
-db password: septimo
+db name: magento
+db user: root
+db password: root
 
 Website administration:
 Backend url: http://<sitename>/admin
 User: admin
 Password: admin123!
 
+After first start project folder will be created, so you need to put configuration files there.
+Default configs are in the default-configs folder (nginx and varnish). Edit them as you like.
 Control scripts (start, stop, restart, terminate) are in the control folder.
