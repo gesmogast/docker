@@ -18,7 +18,7 @@ services:
      image: gesmogast/nginx:magento2v3
      restart: always
      ports:
-       - "2222:22"
+       - "2230:22"
        - "80:80"
        - "443:443"
      environment:
