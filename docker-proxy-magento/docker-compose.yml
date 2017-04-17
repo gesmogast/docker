@@ -11,8 +11,6 @@ services:
        - redis
      image: gesmogast/nginx:magento
      restart: always
-     ports:
-       - "80"
      environment:
        - MAGENTO_DB_HOST=db:3306
        - VIRTUAL_HOST=testmagento.org

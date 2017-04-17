@@ -5,7 +5,7 @@ services:
      restart: always
      image: mysql:5.6
      ports:
-       - "3306:3306"
+       - "3307:3306"
      environment:
        - MYSQL_ROOT_PASSWORD=root
        - MYSQL_DATABASE=magento
@@ -18,14 +18,33 @@ services:
      image: gesmogast/nginx:magento2v3
      restart: always
      ports:
-       - "2222:22"
-       - "8080:80"
-       - "443:443"
+       - "2233:22"
+#       - "80"
+#       - "443"
      environment:
        MAGENTO_DB_HOST: db:3306
      volumes:
        - ./project/website:/var/www
        - ./project/nginxconf:/etc/nginx/sites-available
+
+   php-fpm:
+     image: gesmogast/php7-fpm
+     expose:
+       - "9000"
+     ports:
+       - "9001:9001"
+     links:
+       - magento
+     volumes_from:
+       - magento
+#    environment:
+#       PHP_IDE_CONFIG: "serverName=dev.app"
+
+#     environment:
+#       XDEBUG_CONFIG: remote_host=172.18.0.2      
+#       PHP_IDE_CONFIG: serverName=dev.app
+#     ports:
+#       - "10000:10000"  
 
    redis:
      image: redis
@@ -36,6 +55,7 @@ services:
      restart: always
      ports:
        - "80:80"
+       - "443:443"
      links:
        - magento:testmagento.org
      volumes:

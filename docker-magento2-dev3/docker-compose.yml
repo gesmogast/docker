@@ -19,10 +19,10 @@ services:
      restart: always
      ports:
        - "2230:22"
-       - "80:80"
-       - "443:443"
+       - "172.22.0.1:80:80"
+       - "172.22.0.1:444:443"
      environment:
-       MAGENTO_DB_HOST: db:3306
+       - MAGENTO_DB_HOST=db:3306
      volumes:
        - ./project/website:/var/www
        - ./project/nginxconf:/etc/nginx/sites-available
