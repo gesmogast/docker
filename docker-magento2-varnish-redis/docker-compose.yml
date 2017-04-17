@@ -64,3 +64,15 @@ services:
        - CACHE_SIZE 64m
        - VARNISHD_PARAMS -p default_ttl=3600 -p default_grace=3600
        - VCL_CONFIG /etc/varnish/conf.d/default.vcl
+
+
+   solr:
+     image: solr
+     ports:
+       - "8983:8983"
+     volumes:
+       - ./project/solr:/opt/solr/server/solr/core
+     entrypoint:
+       - docker-entrypoint.sh
+       - solr-precreate
+       - mycore
