@@ -19,8 +19,8 @@ services:
      restart: always
      ports:
        - "2230:22"
-       - "172.22.0.1:80:80"
-       - "172.22.0.1:444:443"
+       - "80:80"
+       - "444:443"
      environment:
        - MAGENTO_DB_HOST=db:3306
      volumes:
@@ -28,23 +28,15 @@ services:
        - ./project/nginxconf:/etc/nginx/sites-available
 
    php-fpm:
-     image: gesmogast/php7-fpm
+     image: gesmogast/php7.0-fpm:v2
      expose:
        - "9000"
      ports:
-       - "9001:9001"
+       - "2253:22"
      links:
        - magento
      volumes_from:
        - magento
-#    environment:
-#       PHP_IDE_CONFIG: "serverName=dev.app"
-
-#     environment:
-#       XDEBUG_CONFIG: remote_host=172.18.0.2      
-#       PHP_IDE_CONFIG: serverName=dev.app
-#     ports:
-#       - "10000:10000"  
 
    phpmyadmin:
      image: phpmyadmin/phpmyadmin
